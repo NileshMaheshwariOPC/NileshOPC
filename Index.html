@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulators</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 100%); 
+            color: var(--dark); 
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .portal-container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header { margin-bottom: 50px; }
+        header h1 { font-size: 2.5rem; color: var(--dark); margin: 0; }
+        header p { color: #64748b; font-size: 1.1rem; margin-top: 10px; }
+
+        .cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portal-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid transparent;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+        }
+
+        /* Admin Card Specifics */
+        .card-admin:hover { border-color: var(--accent); }
+        .card-admin .icon-box { background: #fff7ed; color: var(--accent); }
+        .card-admin .btn { background: var(--accent); }
+
+        /* User Card Specifics */
+        .card-user:hover { border-color: var(--primary); }
+        .card-user .icon-box { background: #eff6ff; color: var(--primary); }
+        .card-user .btn { background: var(--primary); }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-box svg { width: 40px; height: 40px; fill: currentColor; }
+
+        h2 { margin: 10px 0; font-size: 1.5rem; }
+        .description { color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 25px; min-height: 45px; }
+
+        .btn {
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            width: 100%;
+        }
+
+        .footer-note {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="portal-container">
+    <header>
+        <h1>Tier Feature Permissions Management</h1>
+        <p>Select a module to manage or view business logic profiles</p>
+    </header>
+
+    <div class="cards-wrapper">
+        
+        <a href="admin.html" class="portal-card card-admin">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            </div>
+            <h2>Admin Simulator</h2>
+            <p class="description">Create and configure the 12 permission templates. Set checkboxes for specific features.</p>
+            <div class="btn">Launch Creator</div>
+        </a>
+
+        <a href="user.html" class="portal-card card-user">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <h2>User Simulator</h2>
+            <p class="description">Test the classification logic. See how sector and role changes affect feature visibility.</p>
+            <div class="btn">Launch Viewer</div>
+        </a>
+
+    </div>
+
+    <div class="footer-note">
+        Business Logic Flow: Profile Classification ➔ Template Assignment ➔ Conditional Permission Access
+    </div>
+</div>
+
+</body>
+</html>
